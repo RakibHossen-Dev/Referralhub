@@ -9,7 +9,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-blue-50 relative z-50">
-      <div className="flex justify-between items-center w-11/12 mx-auto py-4">
+      <div className="flex justify-between items-center w-11/12 max-w-[1000px] mx-auto py-4">
         <img src="/w-logo.png" className="w-20" alt="Logo" />
 
         {/* Desktop Menu */}
