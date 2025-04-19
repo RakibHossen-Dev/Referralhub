@@ -2,11 +2,14 @@ import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { HiBars3 } from "react-icons/hi2";
 import { RxCross1 } from "react-icons/rx";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-
+  const navigate = useNavigate();
+  const handleNavigate = () => {
+    navigate("/login");
+  };
   return (
     <nav className="bg-blue-50 relative z-50">
       <div className="flex justify-between items-center w-11/12 max-w-[1000px] mx-auto py-4">
@@ -24,7 +27,7 @@ const Navbar = () => {
             <li key={idx}>
               <Link
                 to="/"
-                className="hover:text-blue-700 transition duration-200"
+                className="hover:text-blue-700 text-black transition duration-200"
               >
                 {item}
               </Link>
@@ -33,7 +36,10 @@ const Navbar = () => {
         </ul>
 
         {/* Desktop Button */}
-        <button className="bg-[#305AFF] text-white px-4 py-2 rounded-md hidden lg:flex items-center text-sm gap-2 hover:bg-blue-600 transition duration-200">
+        <button
+          onClick={() => handleNavigate()}
+          className="bg-[#305AFF] text-white cursor-pointer px-4 py-2 rounded-md hidden lg:flex items-center text-sm gap-2 hover:bg-blue-600 transition duration-200"
+        >
           Get Started <FaArrowRightLong />
         </button>
 
@@ -67,7 +73,7 @@ const Navbar = () => {
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <ul className="flex flex-col gap-6 text-sm font-medium mt-14">
+        <ul className="flex flex-col gap-6 text-black text-sm font-medium mt-14">
           {[
             "Home",
             "Features",
@@ -82,7 +88,10 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <button className="mt-6 bg-[#305AFF] text-white px-4 py-2 rounded-md flex items-center justify-center text-sm gap-2 w-full hover:bg-blue-600 transition duration-200">
+        <button
+          onClick={() => handleNavigate()}
+          className="cursor-pointer mt-6 bg-[#305AFF] text-white px-4 py-2 rounded-md flex items-center justify-center text-sm gap-2 w-full hover:bg-blue-600 transition duration-200"
+        >
           Get Started <FaArrowRightLong />
         </button>
       </div>

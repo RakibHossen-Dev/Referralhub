@@ -44,7 +44,7 @@ const Footer = () => {
         </div>
       </div>
       <hr className="text-gray-400 w-11/12 mx-auto my-8" />
-      <p className="text-white text-center text-sm">
+      <p className="text-white text-center text-sm w-11/12 mx-auto">
         &#169; Copyright-2025, Alright reserved by ReferralHub
       </p>
     </footer>
